@@ -73,10 +73,16 @@ async function loadContent() {
 }
 
 /**
- * Pick random item from array, excluding excludeId.
+ * Pick random item from array, excluding excludeId and items from recent movies.
+ * Avoids same movie appearing within the next 5 questions.
  */
-function pickRandom(items, excludeId) {
-  const filtered = excludeId != null ? items.filter((i) => i.id !== excludeId) : [...items];
+function pickRandom(items, excludeId, recentMovies = []) {
+  let filtered = [...items];
+  if (excludeId != null) filtered = filtered.filter((i) => i.id !== excludeId);
+  if (Array.isArray(recentMovies) && recentMovies.length > 0) {
+    const excludeSet = new Set(recentMovies);
+    filtered = filtered.filter((i) => !excludeSet.has(i.answer));
+  }
   if (filtered.length === 0) return null;
   return normalizeItem(filtered[Math.floor(Math.random() * filtered.length)]);
 }
@@ -116,19 +122,19 @@ async function storeVote(contentItemId, voteType) {
 }
 
 /**
- * Get deterministic background variant index from content item id (skin tones type 1–5).
+ * Get deterministic background variant index from content item id (cheerful gradients).
  */
 function getBackgroundVariantIndex(id) {
-  const variants = 5;
+  const variants = 6;
   return (id - 1) % variants;
 }
 
-const SKIN_TONE_COLORS = ['#FFE5D9', '#F5D0C5', '#EBC4AF', '#D4A574', '#C68642'];
+const THEME_COLORS = ['#a8edea', '#d299c2', '#ff9a9e', '#a1c4fd', '#ffecd2', '#84fab0'];
 
 function setThemeColor(variantIndex) {
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta && SKIN_TONE_COLORS[variantIndex]) {
-    meta.setAttribute('content', SKIN_TONE_COLORS[variantIndex]);
+  if (meta && THEME_COLORS[variantIndex]) {
+    meta.setAttribute('content', THEME_COLORS[variantIndex]);
   }
 }
 
@@ -231,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.getElementById('score-display');
 
   let lastShownId = null;
+  const recentMovies = []; // Last 5 movies shown; same movie won't appear within next 5 questions
   let isTransitioning = false;
   let pendingAnswer = null;
   let allContent = [];
@@ -254,10 +261,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!item) return;
     currentItem = item;
     lastShownId = item.id;
+    recentMovies.push(item.correct);
+    if (recentMovies.length > 5) recentMovies.shift();
     contentEl.textContent = item.text;
     contentEl.setAttribute('data-content-id', item.id);
     const variant = getBackgroundVariantIndex(item.id);
-    main.classList.remove('bg-variant-0', 'bg-variant-1', 'bg-variant-2', 'bg-variant-3', 'bg-variant-4');
+    main.classList.remove('bg-variant-0', 'bg-variant-1', 'bg-variant-2', 'bg-variant-3', 'bg-variant-4', 'bg-variant-5');
     main.classList.add(`bg-variant-${variant}`);
     setThemeColor(variant);
     const options = item.options || getAnswerOptions(item.correct);
@@ -337,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (allContent.length === 0) {
         allContent = await loadContent();
       }
-      const item = pickRandom(allContent, lastShownId);
+      const item = pickRandom(allContent, lastShownId, recentMovies);
       if (item) {
         if (wasCorrect !== null && !feedbackSkipped) {
           const waitPromise = feedbackWaitPromise();
@@ -432,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showState('loading');
     try {
       allContent = await loadContent();
-      const item = pickRandom(allContent, null);
+      const item = pickRandom(allContent, null, recentMovies);
       if (item) setContent(item);
       else showState('empty');
     } catch (err) {

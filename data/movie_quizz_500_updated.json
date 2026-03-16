@@ -133,7 +133,7 @@
   },
   {
     "id": 13,
-    "quote": "We used to look up at the sky and wonder at our place in the stars.",
+    "quote": "We used to look up at the sky and wonder at our place in the stars. Now we just worry about our place in the dirt.",
     "options": [
       "The Avengers (2012)",
       "The Silence of the Lambs (1991)",
@@ -353,7 +353,7 @@
   },
   {
     "id": 33,
-    "quote": "My name is Maximus Decimus Meridius.",
+    "quote": "My name is Maximus Decimus Meridius, commander of the Armies of the North, General of the Felix Legions.",
     "options": [
       "Goodfellas (1990)",
       "Taxi Driver (1976)",
@@ -474,7 +474,7 @@
   },
   {
     "id": 44,
-    "quote": "One ring to rule them all.",
+    "quote": "One ring to rule them all, one ring to find them, one ring to bring them all and in the darkness bind them.",
     "options": [
       "Back to the Future (1985)",
       "The Lord of the Rings: The Fellowship of the Ring (2001)",
@@ -606,7 +606,7 @@
   },
   {
     "id": 56,
-    "quote": "Do not go gentle into that good night.",
+    "quote": "Do not go gentle into that good night. Rage, rage against the dying of the light.",
     "options": [
       "Goodfellas (1990)",
       "Taxi Driver (1976)",
@@ -628,7 +628,7 @@
   },
   {
     "id": 58,
-    "quote": "Because he's the hero Gotham deserves, but not the one it needs right now.",
+    "quote": "Because he's the hero Gotham deserves, but not the one it needs right now. So we'll hunt him.",
     "options": [
       "The Dark Knight (2008)",
       "Indiana Jones and the Last Crusade (1989)",
@@ -991,7 +991,7 @@
   },
   {
     "id": 91,
-    "quote": "The night is darkest just before the dawn.",
+    "quote": "The night is darkest just before the dawn. And I promise you, the dawn is coming.",
     "options": [
       "Dune (2021)",
       "The Dark Knight (2008)",
@@ -1101,7 +1101,7 @@
   },
   {
     "id": 101,
-    "quote": "Stupid is as stupid does.",
+    "quote": "Run Forrest run!",
     "options": [
       "Casino (1995)",
       "Forrest Gump (1994)",
@@ -1178,7 +1178,7 @@
   },
   {
     "id": 108,
-    "quote": "We'll always have Paris.",
+    "quote": "We'll always have Paris. We didn't have, we lost it until you came to Casablanca.",
     "options": [
       "Top Gun (1986)",
       "Casablanca (1942)",
@@ -1266,7 +1266,7 @@
   },
   {
     "id": 116,
-    "quote": "Do you want to know why I use a knife?",
+    "quote": "Do you want to know why I use a knife? Guns are too quick.",
     "options": [
       "The Dark Knight (2008)",
       "The Shawshank Redemption (1994)",
@@ -1431,7 +1431,7 @@
   },
   {
     "id": 131,
-    "quote": "Hope is a good thing.",
+    "quote": "Hope is a good thing, maybe the best of things, and no good thing ever dies.",
     "options": [
       "The Shawshank Redemption (1994)",
       "A Few Good Men (1992)",
@@ -1640,7 +1640,7 @@
   },
   {
     "id": 150,
-    "quote": "I guess it comes down to a simple choice.",
+    "quote": "I guess it comes down to a simple choice, really. Get busy living or get busy dying.",
     "options": [
       "The Shawshank Redemption (1994)",
       "Alien (1979)",
@@ -2212,7 +2212,7 @@
   },
   {
     "id": 202,
-    "quote": "Why so serious?",
+    "quote": "You either die a hero or live long enough to see yourself become the villain.",
     "options": [
       "Rocky (1976)",
       "The Dark Knight (2008)",
@@ -2410,7 +2410,7 @@
   },
   {
     "id": 220,
-    "quote": "Get busy living, or get busy dying.",
+    "quote": "I find I'm so excited I can barely sit still or hold a thought in my head. I think it's the excitement only a free man can feel.",
     "options": [
       "Avatar (2009)",
       "Titanic (1997)",
@@ -2432,7 +2432,7 @@
   },
   {
     "id": 222,
-    "quote": "We're still pioneers.",
+    "quote": "We're still pioneers. We've barely begun.",
     "options": [
       "Gladiator (2000)",
       "Interstellar (2014)",
@@ -2564,7 +2564,7 @@
   },
   {
     "id": 234,
-    "quote": "Hope is a good thing.",
+    "quote": "Get busy living, or get busy dying.",
     "options": [
       "The Shawshank Redemption (1994)",
       "Taxi Driver (1976)",
@@ -2718,7 +2718,7 @@
   },
   {
     "id": 248,
-    "quote": "I'm not wearing hockey pads.",
+    "quote": "Why so serious?",
     "options": [
       "Star Wars (1977)",
       "The Dark Knight (2008)",
@@ -2729,7 +2729,7 @@
   },
   {
     "id": 249,
-    "quote": "Because he's the hero Gotham deserves, but not the one it needs right now.",
+    "quote": "I'm not wearing hockey pads.",
     "options": [
       "The Dark Knight (2008)",
       "Rocky (1976)",
@@ -2927,7 +2927,7 @@
   },
   {
     "id": 267,
-    "quote": "The night is darkest just before the dawn.",
+    "quote": "Because he's the hero Gotham deserves, but not the one it needs right now. So we'll hunt him.",
     "options": [
       "The Godfather (1972)",
       "The Hobbit (2012)",
@@ -2949,7 +2949,7 @@
   },
   {
     "id": 269,
-    "quote": "Do you want to know why I use a knife?",
+    "quote": "The night is darkest just before the dawn. And I promise you, the dawn is coming.",
     "options": [
       "The Avengers (2012)",
       "The Dark Knight (2008)",
@@ -2993,7 +2993,7 @@
   },
   {
     "id": 273,
-    "quote": "Some men just want to watch the world burn.",
+    "quote": "Do you want to know why I use a knife? Guns are too quick.",
     "options": [
       "The Dark Knight (2008)",
       "Forrest Gump (1994)",
@@ -3048,7 +3048,7 @@
   },
   {
     "id": 278,
-    "quote": "I guess it comes down to a simple choice.",
+    "quote": "Hope is a good thing, maybe the best of things, and no good thing ever dies.",
     "options": [
       "Alien (1979)",
       "The Shawshank Redemption (1994)",
@@ -3070,7 +3070,7 @@
   },
   {
     "id": 280,
-    "quote": "Brooks was here.",
+    "quote": "I guess it comes down to a simple choice, really. Get busy living or get busy dying.",
     "options": [
       "Ghostbusters (1984)",
       "The Shawshank Redemption (1994)",
@@ -3202,7 +3202,7 @@
   },
   {
     "id": 292,
-    "quote": "My momma always said life was like a box of chocolates.",
+    "quote": "Stupid is as stupid does.",
     "options": [
       "Forrest Gump (1994)",
       "Mad Max: Fury Road (2015)",
@@ -3312,7 +3312,7 @@
   },
   {
     "id": 302,
-    "quote": "A wizard is never late, nor is he early.",
+    "quote": "A wizard is never late, nor is he early. He arrives precisely when he means to.",
     "options": [
       "Star Wars (1977)",
       "Inception (2010)",
@@ -3433,7 +3433,7 @@
   },
   {
     "id": 313,
-    "quote": "We used to look up at the sky and wonder at our place in the stars.",
+    "quote": "We used to look up at the sky and wonder at our place in the stars. Now we just worry about our place in the dirt.",
     "options": [
       "Dune (2021)",
       "Interstellar (2014)",
@@ -3444,7 +3444,7 @@
   },
   {
     "id": 314,
-    "quote": "One ring to rule them all.",
+    "quote": "All we have to decide is what to do with the time that is given us.",
     "options": [
       "The Dark Knight (2008)",
       "The Avengers (2012)",
@@ -3554,7 +3554,7 @@
   },
   {
     "id": 324,
-    "quote": "You shall not pass!",
+    "quote": "One ring to rule them all, one ring to find them, one ring to bring them all and in the darkness bind them.",
     "options": [
       "Casino (1995)",
       "The Lord of the Rings: The Fellowship of the Ring (2001)",
@@ -3620,7 +3620,7 @@
   },
   {
     "id": 330,
-    "quote": "Why so serious?",
+    "quote": "Some men just want to watch the world burn.",
     "options": [
       "Jurassic Park (1993)",
       "Mad Max: Fury Road (2015)",
@@ -3708,7 +3708,7 @@
   },
   {
     "id": 338,
-    "quote": "Fear can hold you prisoner. Hope can set you free.",
+    "quote": "Brooks was here.",
     "options": [
       "The Shawshank Redemption (1994)",
       "Mad Max: Fury Road (2015)",
@@ -4093,7 +4093,7 @@
   },
   {
     "id": 373,
-    "quote": "My name is Maximus Decimus Meridius.",
+    "quote": "My name is Maximus Decimus Meridius, commander of the Armies of the North, General of the Felix Legions.",
     "options": [
       "Gladiator (2000)",
       "Ghostbusters (1984)",
@@ -4236,7 +4236,7 @@
   },
   {
     "id": 386,
-    "quote": "Get busy living, or get busy dying.",
+    "quote": "Fear can hold you prisoner. Hope can set you free.",
     "options": [
       "The Shawshank Redemption (1994)",
       "A Few Good Men (1992)",
@@ -4269,7 +4269,7 @@
   },
   {
     "id": 389,
-    "quote": "I'm not a smart man, but I know what love is.",
+    "quote": "My momma always said life was like a box of chocolates.",
     "options": [
       "Blade Runner (1982)",
       "Gladiator (2000)",
@@ -4500,7 +4500,7 @@
   },
   {
     "id": 410,
-    "quote": "Remember who you are.",
+    "quote": "Remember who you are. You are my son and the one true king.",
     "options": [
       "The Lion King (1994)",
       "Kung Fu Panda (2008)",
@@ -4698,7 +4698,7 @@
   },
   {
     "id": 428,
-    "quote": "Everything the light touches is our kingdom.",
+    "quote": "Everything the light touches is our kingdom. But a king's time as ruler rises and falls like the sun.",
     "options": [
       "Kung Fu Panda (2008)",
       "The Lion King (1994)",
@@ -5424,7 +5424,7 @@
   },
   {
     "id": 494,
-    "quote": "Hakuna matata!",
+    "quote": "Oh yes, the past can hurt. But the way I see it, you can either run from it or learn from it.",
     "options": [
       "Beauty and the Beast (1991)",
       "Ratatouille (2007)",

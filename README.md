@@ -2,14 +2,30 @@
 
 A frontend-only PWA movie quote quiz. Read the quote and tap the correct answer. Content from `content.json`; votes stored locally in the browser.
 
+## Demo
+
+**[Live demo](https://parayno.dk/movie-quiz/frontend/)**
+
 ## Quick start
+
+**Option A — Match live demo URL** (recommended):
+
+```bash
+./run-demo.sh
+```
+
+Then open **http://localhost:3000/movie-quiz/frontend/**
+
+**Option B — Simple local serve:**
 
 ```bash
 cd frontend
-python -m http.server 3000
+python3 -m http.server 3000
 ```
 
 Open http://localhost:3000
+
+> Use **http://** not file:// — opening index.html directly will break loading.
 
 ## Deploy via FTP (GigaHost, etc.)
 

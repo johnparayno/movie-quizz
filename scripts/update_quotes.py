@@ -105,11 +105,11 @@ MOVIE_QUOTES = {
         "Free your mind.",
     ],
     "Interstellar,2014": [
-        "We used to look up at the sky and wonder at our place in the stars.",
-        "Do not go gentle into that good night.",
+        "We used to look up at the sky and wonder at our place in the stars. Now we just worry about our place in the dirt.",
+        "Do not go gentle into that good night. Rage, rage against the dying of the light.",
         "Mankind was born on Earth. It was never meant to die here.",
         "Love is the one thing we're capable of perceiving that transcends dimensions of time and space.",
-        "We're still pioneers.",
+        "We're still pioneers. We've barely begun.",
         "Don't trust the right thing done for the wrong reason.",
     ],
     "Top Gun,1986": [
@@ -124,7 +124,7 @@ MOVIE_QUOTES = {
         "Here's looking at you, kid.",
         "Of all the gin joints in all the towns in all the world, she walks into mine.",
         "Play it again, Sam.",
-        "We'll always have Paris.",
+        "We'll always have Paris. We didn't have, we lost it until you came to Casablanca.",
         "Louis, I think this is the beginning of a beautiful friendship.",
         "Round up the usual suspects.",
     ],
@@ -153,9 +153,12 @@ MOVIE_QUOTES = {
     "Forrest Gump,1994": [
         "Life is like a box of chocolates. You never know what you're gonna get.",
         "Run, Forrest, run!",
+        "Run Forrest run!",
         "Stupid is as stupid does.",
         "My momma always said life was like a box of chocolates.",
         "I'm not a smart man, but I know what love is.",
+        "Life is like a box of chocolate. You never know what you're gonna get.",
+        "From that day on, if I was ever going somewhere, I was running!",
     ],
     "Blade Runner,1982": [
         "I've seen things you people wouldn't believe.",
@@ -167,10 +170,11 @@ MOVIE_QUOTES = {
     "The Dark Knight,2008": [
         "Why so serious?",
         "I'm not wearing hockey pads.",
-        "Because he's the hero Gotham deserves, but not the one it needs right now.",
-        "The night is darkest just before the dawn.",
-        "Do you want to know why I use a knife?",
+        "Because he's the hero Gotham deserves, but not the one it needs right now. So we'll hunt him.",
+        "The night is darkest just before the dawn. And I promise you, the dawn is coming.",
+        "Do you want to know why I use a knife? Guns are too quick.",
         "Some men just want to watch the world burn.",
+        "You either die a hero or live long enough to see yourself become the villain.",
     ],
     "No Country for Old Men,2007": [
         "Call it, friendo.",
@@ -201,12 +205,13 @@ MOVIE_QUOTES = {
         "The sky people have sent us a message.",
     ],
     "The Lord of the Rings: The Fellowship of the Ring,2001": [
-        "One ring to rule them all.",
+        "One ring to rule them all, one ring to find them, one ring to bring them all and in the darkness bind them.",
         "You shall not pass!",
         "Fly, you fools!",
         "I'm not trying to rob you. I'm trying to help you.",
         "My precious.",
-        "A wizard is never late, nor is he early.",
+        "A wizard is never late, nor is he early. He arrives precisely when he means to.",
+        "All we have to decide is what to do with the time that is given us.",
     ],
     "Pulp Fiction,1994": [
         "Say 'what' again. Say 'what' again, I dare you.",
@@ -281,7 +286,7 @@ MOVIE_QUOTES = {
         "That's heavy.",
     ],
     "Gladiator,2000": [
-        "My name is Maximus Decimus Meridius.",
+        "My name is Maximus Decimus Meridius, commander of the Armies of the North, General of the Felix Legions.",
         "Are you not entertained?",
         "What we do in life echoes in eternity.",
         "Death smiles at us all, but all a man can do is smile back.",
@@ -304,10 +309,11 @@ MOVIE_QUOTES = {
     ],
     "The Shawshank Redemption,1994": [
         "Get busy living, or get busy dying.",
-        "Hope is a good thing.",
-        "I guess it comes down to a simple choice.",
+        "Hope is a good thing, maybe the best of things, and no good thing ever dies.",
+        "I guess it comes down to a simple choice, really. Get busy living or get busy dying.",
         "Brooks was here.",
         "Fear can hold you prisoner. Hope can set you free.",
+        "I find I'm so excited I can barely sit still or hold a thought in my head. I think it's the excitement only a free man can feel.",
     ],
     # Animations and cartoons
     "Aladdin,1992": [
@@ -406,9 +412,10 @@ MOVIE_QUOTES = {
     ],
     "The Lion King,1994": [
         "Hakuna matata!",
-        "Remember who you are.",
-        "Everything the light touches is our kingdom.",
+        "Remember who you are. You are my son and the one true king.",
+        "Everything the light touches is our kingdom. But a king's time as ruler rises and falls like the sun.",
         "Long live the king.",
+        "Oh yes, the past can hurt. But the way I see it, you can either run from it or learn from it.",
     ],
     "The Little Mermaid,1989": [
         "Part of your world.",
@@ -427,6 +434,48 @@ MOVIE_QUOTES = {
         "I don't want your help. I want you safe.",
         "So long, boys!",
         "That might sound boring, but I think the boring stuff is the stuff I remember the most.",
+    ],
+    # More famous quotes - additional movies
+    "The Wizard of Oz,1939": [
+        "There's no place like home.",
+        "Toto, I've a feeling we're not in Kansas anymore.",
+        "I'll get you, my pretty, and your little dog too!",
+        "Lions and tigers and bears, oh my!",
+    ],
+    "Gone with the Wind,1939": [
+        "Frankly, my dear, I don't give a damn.",
+        "After all, tomorrow is another day!",
+        "As God is my witness, I'll never be hungry again!",
+    ],
+    "The Princess Bride,1987": [
+        "Hello. My name is Inigo Montoya. You killed my father. Prepare to die.",
+        "Inconceivable!",
+        "As you wish.",
+        "Have fun storming the castle!",
+    ],
+    "Ferris Bueller's Day Off,1986": [
+        "Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.",
+        "Bueller? Bueller? Bueller?",
+    ],
+    "Jerry Maguire,1996": [
+        "You had me at hello.",
+        "Show me the money!",
+        "Help me help you.",
+    ],
+    "A League of Their Own,1992": [
+        "There's no crying in baseball!",
+    ],
+    "Field of Dreams,1989": [
+        "If you build it, he will come.",
+        "Is this heaven? No, it's Iowa.",
+    ],
+    "Braveheart,1995": [
+        "They may take our lives, but they'll never take our freedom!",
+        "Every man dies. Not every man really lives.",
+    ],
+    "Good Will Hunting,1997": [
+        "It's not your fault.",
+        "You'll have bad times, but it'll always wake you up to the good stuff you weren't paying attention to.",
     ],
 }
 
@@ -479,7 +528,7 @@ def main():
         missing = set()
         for entry in data:
             answer = entry.get("answer", "")
-            if answer in MOVIE_QUOTES:
+            if _normalize_key(answer) in MOVIE_QUOTES:
                 entry["quote"] = get_next_quote(answer)
                 updated += 1
             else:

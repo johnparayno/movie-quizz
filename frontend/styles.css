@@ -22,22 +22,22 @@ main {
   transition: background 0.4s ease;
 }
 
-/* Skin tone backgrounds (Fitzpatrick type 1–5) */
-.bg-variant-0 { background: linear-gradient(135deg, #FFE5D9 0%, #F5D0C5 100%); }
-.bg-variant-1 { background: linear-gradient(135deg, #F5D0C5 0%, #EBC4AF 100%); }
-.bg-variant-2 { background: linear-gradient(135deg, #EBC4AF 0%, #D4A574 100%); }
-.bg-variant-3 { background: linear-gradient(135deg, #D4A574 0%, #C68642 100%); }
-.bg-variant-4 { background: linear-gradient(135deg, #C68642 0%, #A67B5B 100%); }
-.bg-variant-5 { background: linear-gradient(135deg, #D4A574 0%, #EBC4AF 100%); }
+/* Cheerful gradient backgrounds */
+.bg-variant-0 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #ffecd2 100%); }
+.bg-variant-1 { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 50%, #c3ecfa 100%); }
+.bg-variant-2 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%); }
+.bg-variant-3 { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 50%, #fbc2eb 100%); }
+.bg-variant-4 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%); }
+.bg-variant-5 { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 50%, #a6c1ee 100%); }
 
-/* T022: Mobile - skin tone gradients */
+/* T022: Mobile - cheerful gradients (vertical) */
 @media (max-width: 768px) {
-  .bg-variant-0 { background: linear-gradient(180deg, #FFE5D9 0%, #F5D0C5 100%); }
-  .bg-variant-1 { background: linear-gradient(180deg, #F5D0C5 0%, #EBC4AF 100%); }
-  .bg-variant-2 { background: linear-gradient(180deg, #EBC4AF 0%, #D4A574 100%); }
-  .bg-variant-3 { background: linear-gradient(180deg, #D4A574 0%, #C68642 100%); }
-  .bg-variant-4 { background: linear-gradient(180deg, #C68642 0%, #A67B5B 100%); }
-  .bg-variant-5 { background: linear-gradient(180deg, #D4A574 0%, #EBC4AF 100%); }
+  .bg-variant-0 { background: linear-gradient(180deg, #a8edea 0%, #fed6e3 50%, #ffecd2 100%); }
+  .bg-variant-1 { background: linear-gradient(180deg, #d299c2 0%, #fef9d7 50%, #c3ecfa 100%); }
+  .bg-variant-2 { background: linear-gradient(180deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%); }
+  .bg-variant-3 { background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 50%, #fbc2eb 100%); }
+  .bg-variant-4 { background: linear-gradient(180deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%); }
+  .bg-variant-5 { background: linear-gradient(180deg, #84fab0 0%, #8fd3f4 50%, #a6c1ee 100%); }
   /* Info icon: upper right, below status bar (avoids notch; clickable in PWA standalone) */
   .info-btn {
     top: max(clamp(0.5rem, 2vw, 1rem), env(safe-area-inset-top));
@@ -91,7 +91,7 @@ main {
   content: '"';
 }
 
-/* Skin tone backgrounds: dark text for contrast */
+/* Gradient backgrounds: dark text for contrast */
 .bg-variant-0 .content-text,
 .bg-variant-1 .content-text,
 .bg-variant-2 .content-text,
