@@ -8,6 +8,8 @@ const SESSION_COOKIE_NAME = 'quiz_session';
 const SESSION_COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year
 const OFFLINE_DB_NAME = 'quiz_offline';
 const OFFLINE_STORE = 'votes';
+const PREFS_STORE = 'prefs';
+const HIGH_SCORE_KEY = 'high_score';
 
 /**
  * Get or create session ID. Uses first-party cookie for persistence.
@@ -90,10 +92,71 @@ function pickRandom(items, excludeId, recentMovies = []) {
 /**
  * Store vote locally (IndexedDB). No server.
  */
+/**
+ * Get stored high score from IndexedDB (persists across sessions/refresh).
+ */
+async function getStoredHighScore() {
+  if (!indexedDB) return 0;
+  return new Promise((resolve) => {
+    const req = indexedDB.open(OFFLINE_DB_NAME, 2);
+    req.onerror = () => resolve(0);
+    req.onsuccess = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains(PREFS_STORE)) {
+        db.close();
+        return resolve(0);
+      }
+      const tx = db.transaction(PREFS_STORE, 'readonly');
+      const store = tx.objectStore(PREFS_STORE);
+      const getReq = store.get(HIGH_SCORE_KEY);
+      getReq.onsuccess = () => {
+        const val = getReq.result;
+        resolve(typeof val === 'number' && val >= 0 ? val : 0);
+      };
+      getReq.onerror = () => resolve(0);
+    };
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(PREFS_STORE)) {
+        db.createObjectStore(PREFS_STORE);
+      }
+    };
+  });
+}
+
+/**
+ * Save high score to IndexedDB.
+ */
+async function setStoredHighScore(value) {
+  if (!indexedDB) return;
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(OFFLINE_DB_NAME, 2);
+    req.onerror = () => reject(req.error);
+    req.onsuccess = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains(PREFS_STORE)) {
+        db.close();
+        return resolve();
+      }
+      const tx = db.transaction(PREFS_STORE, 'readwrite');
+      const store = tx.objectStore(PREFS_STORE);
+      store.put(value, HIGH_SCORE_KEY);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    };
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(PREFS_STORE)) {
+        db.createObjectStore(PREFS_STORE);
+      }
+    };
+  });
+}
+
 async function storeVote(contentItemId, voteType) {
   if (!indexedDB) return Promise.resolve({ offline: true });
   return new Promise((resolve, reject) => {
-    const req = indexedDB.open(OFFLINE_DB_NAME, 1);
+    const req = indexedDB.open(OFFLINE_DB_NAME, 2);
     req.onerror = () => reject(req.error);
     req.onsuccess = () => {
       const db = req.result;
@@ -116,6 +179,9 @@ async function storeVote(contentItemId, voteType) {
       const db = e.target.result;
       if (!db.objectStoreNames.contains(OFFLINE_STORE)) {
         db.createObjectStore(OFFLINE_STORE, { keyPath: 'id', autoIncrement: true });
+      }
+      if (!db.objectStoreNames.contains(PREFS_STORE)) {
+        db.createObjectStore(PREFS_STORE);
       }
     };
   });
@@ -242,7 +308,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let pendingAnswer = null;
   let allContent = [];
   let score = 0;
+  let highScore = 0;
   let currentItem = null;
+  const highScoreDisplay = document.getElementById('high-score-display');
 
   function showState(which) {
     loadingState?.classList.toggle('hidden', which !== 'loading');
@@ -255,6 +323,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateScoreDisplay() {
     if (scoreDisplay) scoreDisplay.textContent = `SCORE: ${score}`;
+    if (highScoreDisplay) {
+      if (highScore > 0) {
+        highScoreDisplay.textContent = `HIGH SCORE: ${highScore}`;
+        highScoreDisplay.classList.remove('hidden');
+      } else {
+        highScoreDisplay.classList.add('hidden');
+      }
+    }
   }
 
   function setContent(item) {
@@ -385,6 +461,10 @@ document.addEventListener('DOMContentLoaded', () => {
       score += 1;
       updateScoreDisplay();
     } else {
+      if (score > highScore) {
+        highScore = score;
+        setStoredHighScore(highScore).catch(() => {});
+      }
       score = 0;
       updateScoreDisplay();
     }
@@ -440,13 +520,16 @@ document.addEventListener('DOMContentLoaded', () => {
   (async () => {
     showState('loading');
     try {
+      highScore = await getStoredHighScore();
       allContent = await loadContent();
       const item = pickRandom(allContent, null, recentMovies);
       if (item) setContent(item);
       else showState('empty');
+      updateScoreDisplay();
     } catch (err) {
       console.error('Initial load failed:', err);
       showState('error');
+      updateScoreDisplay();
     }
   })();
 });

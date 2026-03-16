@@ -10,7 +10,7 @@
   <title>quiz</title>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon.svg">
-  <link rel="stylesheet" href="styles.css?v=2.0.4">
+  <link rel="stylesheet" href="styles.css?v=2.0.5">
 </head>
 <body>
   <!-- Info icon: upper right corner (below status bar for PWA on iPhone) -->
@@ -67,9 +67,12 @@
       <button id="retry-vote" type="button" aria-label="Retry vote">Retry vote</button>
     </div>
   </main>
-  <span id="score-display" class="score-display" aria-live="polite">SCORE: 0</span>
-  <!-- Version: 2.0.4 — frontend-only PWA -->
-  <span class="version" aria-hidden="true">v2.0.4</span>
-  <script src="app.js?v=2.0.4"></script>
+  <div id="score-container" class="score-container" aria-live="polite">
+    <span id="score-display" class="score-display">SCORE: 0</span>
+    <span id="high-score-display" class="high-score-display hidden"></span>
+  </div>
+  <!-- Version: 2.0.5 — frontend-only PWA -->
+  <span class="version" aria-hidden="true">v2.0.5</span>
+  <script src="app.js?v=2.0.5"></script>
 </body>
 </html>

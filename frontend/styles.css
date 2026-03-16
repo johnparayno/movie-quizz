@@ -467,16 +467,33 @@ main.transition-in .content-text {
 }
 
 /* Score display: lower left corner */
-.score-display {
+.score-container {
   position: fixed;
   bottom: max(0.35rem, env(safe-area-inset-bottom));
   left: max(0.5rem, env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.score-display {
   font-size: 1rem;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.85);
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
-  z-index: 5;
-  pointer-events: none;
+}
+
+.high-score-display {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.high-score-display.hidden {
+  display: none;
 }
 
 /* Version badge: bottom right, small text */
