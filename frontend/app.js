@@ -284,7 +284,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const FEEDBACK_DURATION_MS = 5000;
 
+  /** Resolves when feedback should end: either after FEEDBACK_DURATION_MS or when user taps to skip. */
+  let resolveFeedbackWait = null;
+  let feedbackSkipped = false;
+  const feedbackWaitPromise = () => new Promise((r) => { resolveFeedbackWait = r; });
+
   function showAnswerFeedback(correct) {
+    feedbackSkipped = false;
     if (!voteFeedbackOverlay) return;
     voteFeedbackOverlay.classList.remove('hidden');
     boohFeedback?.classList.add('hidden');
@@ -293,15 +299,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ctx) ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
     if (correct) {
       runConfetti(confettiCanvas, 1200);
-      setTimeout(() => voteFeedbackOverlay?.classList.add('hidden'), FEEDBACK_DURATION_MS);
     } else {
       wrongFeedback?.classList.remove('hidden');
-      setTimeout(() => {
-        voteFeedbackOverlay?.classList.add('hidden');
-        wrongFeedback?.classList.add('hidden');
-      }, FEEDBACK_DURATION_MS);
     }
+    const hideOverlay = () => {
+      voteFeedbackOverlay?.classList.add('hidden');
+      wrongFeedback?.classList.add('hidden');
+    };
+    setTimeout(hideOverlay, FEEDBACK_DURATION_MS);
   }
+
+  function skipFeedbackAndAdvance() {
+    feedbackSkipped = true;
+    if (resolveFeedbackWait) {
+      resolveFeedbackWait();
+      resolveFeedbackWait = null;
+    }
+    voteFeedbackOverlay?.classList.add('hidden');
+    wrongFeedback?.classList.add('hidden');
+  }
+
+  voteFeedbackOverlay?.addEventListener('click', skipFeedbackAndAdvance);
+  document.getElementById('next-skip-btn')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    skipFeedbackAndAdvance();
+  });
 
   async function loadNext(wasCorrect = null) {
     if (wasCorrect === true) {
@@ -317,8 +339,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const item = pickRandom(allContent, lastShownId);
       if (item) {
-        if (wasCorrect !== null) {
-          await new Promise((r) => setTimeout(r, FEEDBACK_DURATION_MS));
+        if (wasCorrect !== null && !feedbackSkipped) {
+          const waitPromise = feedbackWaitPromise();
+          const timeoutPromise = new Promise((r) => setTimeout(r, FEEDBACK_DURATION_MS));
+          await Promise.race([waitPromise, timeoutPromise]);
+          resolveFeedbackWait = null;
         }
         showTransition(() => setContent(item));
       } else {
