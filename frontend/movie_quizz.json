@@ -1,0 +1,717 @@
+[
+  {
+    "id": 1,
+    "text": "Nice shoes. Did you choose those yourself?",
+    "correct": "Neg"
+  },
+  {
+    "id": 2,
+    "text": "Nice jacket. My little cousin has one like that.",
+    "correct": "Neg"
+  },
+  {
+    "id": 3,
+    "text": "Nice style. That’s a confident choice.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 4,
+    "text": "Nice hair. Did it start like that?",
+    "correct": "Neg"
+  },
+  {
+    "id": 5,
+    "text": "Nice glasses. Are those part of the look?",
+    "correct": "Neg"
+  },
+  {
+    "id": 6,
+    "text": "Nice watch. Is it mostly decorative?",
+    "correct": "Neg"
+  },
+  {
+    "id": 7,
+    "text": "Nice outfit. That’s bold.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 8,
+    "text": "Nice smile. Do you practice that?",
+    "correct": "Neg"
+  },
+  {
+    "id": 9,
+    "text": "Nice nails. Did you do them yourself?",
+    "correct": "Neg"
+  },
+  {
+    "id": 10,
+    "text": "Nice earrings. Are those ironic?",
+    "correct": "Neg"
+  },
+  {
+    "id": 11,
+    "text": "Nice shoes. Comfortable at least?",
+    "correct": "Neg"
+  },
+  {
+    "id": 12,
+    "text": "Nice jacket. That’s definitely a vibe.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 13,
+    "text": "Nice shirt. That’s a statement.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 14,
+    "text": "Nice bag. Does it come with stories?",
+    "correct": "Opener"
+  },
+  {
+    "id": 15,
+    "text": "Nice outfit. You look confident wearing that.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 16,
+    "text": "Nice haircut. That must take commitment.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 17,
+    "text": "Nice look. That’s memorable.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 18,
+    "text": "Nice boots. You look ready for trouble.",
+    "correct": "Neg"
+  },
+  {
+    "id": 19,
+    "text": "Nice jacket. That’s expressive.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 20,
+    "text": "Nice style. That’s… unique.",
+    "correct": "Neg"
+  },
+  {
+    "id": 21,
+    "text": "Nice hair. Is it real?",
+    "correct": "Neg"
+  },
+  {
+    "id": 22,
+    "text": "Nice hair. Did it always look like that?",
+    "correct": "Neg"
+  },
+  {
+    "id": 23,
+    "text": "Nice eyelashes. Are those real?",
+    "correct": "Neg"
+  },
+  {
+    "id": 24,
+    "text": "Nice tan. Is that natural?",
+    "correct": "Neg"
+  },
+  {
+    "id": 25,
+    "text": "Nice nails. Are those yours?",
+    "correct": "Neg"
+  },
+  {
+    "id": 26,
+    "text": "Nice curls. Did you wake up like that?",
+    "correct": "Neg"
+  },
+  {
+    "id": 27,
+    "text": "Nice highlights. Was that intentional?",
+    "correct": "Neg"
+  },
+  {
+    "id": 28,
+    "text": "Nice makeup. That must take practice.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 29,
+    "text": "Nice eyebrows. Did you do those yourself?",
+    "correct": "Neg"
+  },
+  {
+    "id": 30,
+    "text": "Nice perfume. That’s… strong.",
+    "correct": "Neg"
+  },
+  {
+    "id": 31,
+    "text": "Nice shoes. Did you borrow those?",
+    "correct": "Neg"
+  },
+  {
+    "id": 32,
+    "text": "Nice outfit. Is that your usual style?",
+    "correct": "Opener"
+  },
+  {
+    "id": 33,
+    "text": "Nice ring. Is that part of the look?",
+    "correct": "Neg"
+  },
+  {
+    "id": 34,
+    "text": "Nice hair. That must take maintenance.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 35,
+    "text": "Nice jacket. That’s definitely a choice.",
+    "correct": "Neg"
+  },
+  {
+    "id": 36,
+    "text": "Nice smile. Is that your default setting?",
+    "correct": "Neg"
+  },
+  {
+    "id": 37,
+    "text": "Nice nails. That must take patience.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 38,
+    "text": "Nice lipstick. Is that the bold version?",
+    "correct": "Neg"
+  },
+  {
+    "id": 39,
+    "text": "Nice style. Do people usually notice it?",
+    "correct": "Neg"
+  },
+  {
+    "id": 40,
+    "text": "Nice watch. Is that mostly for show?",
+    "correct": "Neg"
+  },
+  {
+    "id": 41,
+    "text": "Okay let me guess — who's the fun one in your group?",
+    "correct": "Neg"
+  },
+  {
+    "id": 42,
+    "text": "Wait, which one of you is the responsible one?",
+    "correct": "Neg"
+  },
+  {
+    "id": 43,
+    "text": "Let me guess — you're the troublemaker and she's the responsible one.",
+    "correct": "Neg"
+  },
+  {
+    "id": 44,
+    "text": "Okay who’s the leader in your group?",
+    "correct": "Neg"
+  },
+  {
+    "id": 45,
+    "text": "Which one of you gets everyone into trouble?",
+    "correct": "Neg"
+  },
+  {
+    "id": 46,
+    "text": "Who’s the one who convinces everyone to stay out?",
+    "correct": "Neg"
+  },
+  {
+    "id": 47,
+    "text": "Who’s the bad influence here?",
+    "correct": "Neg"
+  },
+  {
+    "id": 48,
+    "text": "Let me guess — you're the wild one.",
+    "correct": "Neg"
+  },
+  {
+    "id": 49,
+    "text": "Which one of you is the sensible friend?",
+    "correct": "Neg"
+  },
+  {
+    "id": 50,
+    "text": "Who’s the one with the bad ideas?",
+    "correct": "Neg"
+  },
+  {
+    "id": 51,
+    "text": "Which one of you starts the chaos?",
+    "correct": "Neg"
+  },
+  {
+    "id": 52,
+    "text": "Let me guess — you're the quiet dangerous one.",
+    "correct": "Neg"
+  },
+  {
+    "id": 53,
+    "text": "Who’s the responsible adult here?",
+    "correct": "Neg"
+  },
+  {
+    "id": 54,
+    "text": "Which one of you is the voice of reason?",
+    "correct": "Neg"
+  },
+  {
+    "id": 55,
+    "text": "Which one of you gets bored first?",
+    "correct": "Neg"
+  },
+  {
+    "id": 56,
+    "text": "Let me guess — you're the dramatic one.",
+    "correct": "Neg"
+  },
+  {
+    "id": 57,
+    "text": "Who’s the unpredictable one?",
+    "correct": "Neg"
+  },
+  {
+    "id": 58,
+    "text": "Which one of you talks the most?",
+    "correct": "Neg"
+  },
+  {
+    "id": 59,
+    "text": "Who’s the one who escalates things?",
+    "correct": "Neg"
+  },
+  {
+    "id": 60,
+    "text": "Let me guess — you're the instigator.",
+    "correct": "Neg"
+  },
+  {
+    "id": 61,
+    "text": "You seem like a bad idea.",
+    "correct": "Neg"
+  },
+  {
+    "id": 62,
+    "text": "You seem fun, but exhausting.",
+    "correct": "Neg"
+  },
+  {
+    "id": 63,
+    "text": "You seem interesting… and slightly dangerous.",
+    "correct": "Neg"
+  },
+  {
+    "id": 64,
+    "text": "You seem like trouble waiting to happen.",
+    "correct": "Neg"
+  },
+  {
+    "id": 65,
+    "text": "You seem like chaos in human form.",
+    "correct": "Neg"
+  },
+  {
+    "id": 66,
+    "text": "You seem like someone people regret following.",
+    "correct": "Neg"
+  },
+  {
+    "id": 67,
+    "text": "You seem like someone who escalates everything.",
+    "correct": "Neg"
+  },
+  {
+    "id": 68,
+    "text": "You seem like someone who collects drama.",
+    "correct": "Neg"
+  },
+  {
+    "id": 69,
+    "text": "You seem like someone who enjoys pushing limits.",
+    "correct": "Neg"
+  },
+  {
+    "id": 70,
+    "text": "You seem like someone who enjoys risky ideas.",
+    "correct": "Neg"
+  },
+  {
+    "id": 71,
+    "text": "You seem like someone who gets people into trouble.",
+    "correct": "Neg"
+  },
+  {
+    "id": 72,
+    "text": "You seem like someone who tests patience.",
+    "correct": "Neg"
+  },
+  {
+    "id": 73,
+    "text": "You seem like someone who causes interesting problems.",
+    "correct": "Neg"
+  },
+  {
+    "id": 74,
+    "text": "You seem like someone who enjoys being difficult.",
+    "correct": "Neg"
+  },
+  {
+    "id": 75,
+    "text": "You seem like someone who enjoys stirring the pot.",
+    "correct": "Neg"
+  },
+  {
+    "id": 76,
+    "text": "You seem like someone who enjoys chaos more than peace.",
+    "correct": "Neg"
+  },
+  {
+    "id": 77,
+    "text": "You seem like someone who starts stories.",
+    "correct": "Neg"
+  },
+  {
+    "id": 78,
+    "text": "You seem like someone who enjoys challenging people.",
+    "correct": "Neg"
+  },
+  {
+    "id": 79,
+    "text": "You seem like someone who refuses boring nights.",
+    "correct": "Neg"
+  },
+  {
+    "id": 80,
+    "text": "You seem like someone who makes things unpredictable.",
+    "correct": "Neg"
+  },
+  {
+    "id": 81,
+    "text": "Nice nails. Are those real?",
+    "correct": "Neg"
+  },
+  {
+    "id": 82,
+    "text": "Nice hair. Is that all yours?",
+    "correct": "Neg"
+  },
+  {
+    "id": 83,
+    "text": "That’s a cute jacket. My little sister has one like it.",
+    "correct": "Neg"
+  },
+  {
+    "id": 84,
+    "text": "You look adorable… almost.",
+    "correct": "Neg"
+  },
+  {
+    "id": 85,
+    "text": "That’s a bold outfit. I respect the confidence.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 86,
+    "text": "You seem sweet. I’ll try not to corrupt you.",
+    "correct": "Neg"
+  },
+  {
+    "id": 87,
+    "text": "You look like trouble. I should probably avoid you.",
+    "correct": "Neg"
+  },
+  {
+    "id": 88,
+    "text": "You look like someone who gets bored easily.",
+    "correct": "Neg"
+  },
+  {
+    "id": 89,
+    "text": "You seem like the type who causes drama and then blames someone else.",
+    "correct": "Neg"
+  },
+  {
+    "id": 90,
+    "text": "You seem like you’d argue just for fun.",
+    "correct": "Neg"
+  },
+  {
+    "id": 91,
+    "text": "Wait, let me guess — you’re the troublemaker in your group.",
+    "correct": "Neg"
+  },
+  {
+    "id": 92,
+    "text": "Okay, which one of you is the bad influence?",
+    "correct": "Neg"
+  },
+  {
+    "id": 93,
+    "text": "Let me guess — you’re the one who convinces everyone to stay out late.",
+    "correct": "Neg"
+  },
+  {
+    "id": 94,
+    "text": "Wait, who’s the responsible one here?",
+    "correct": "Neg"
+  },
+  {
+    "id": 95,
+    "text": "You look like the unpredictable one.",
+    "correct": "Neg"
+  },
+  {
+    "id": 96,
+    "text": "You seem like someone I shouldn’t trust with bad ideas.",
+    "correct": "Neg"
+  },
+  {
+    "id": 97,
+    "text": "You seem fun… but dangerous.",
+    "correct": "Neg"
+  },
+  {
+    "id": 98,
+    "text": "You seem like someone who escalates things quickly.",
+    "correct": "Neg"
+  },
+  {
+    "id": 99,
+    "text": "You seem like chaos disguised as a good idea.",
+    "correct": "Neg"
+  },
+  {
+    "id": 100,
+    "text": "You seem like someone who enjoys trouble.",
+    "correct": "Neg"
+  },
+  {
+    "id": 101,
+    "text": "You're really cute... but you have something on your tooth.",
+    "correct": "Neg"
+  },
+  {
+    "id": 102,
+    "text": "That's a nice outfit. My aunt has one just like it.",
+    "correct": "Neg"
+  },
+  {
+    "id": 103,
+    "text": "You're not my type... you're better.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 104,
+    "text": "Who lied to you and told you that you were pretty?",
+    "correct": "Neg"
+  },
+  {
+    "id": 105,
+    "text": "Did you see that? That guy just tried to steal your drink, I had to stop him.",
+    "correct": "Opener"
+  },
+  {
+    "id": 106,
+    "text": "I know this is sudden, but I saw you from over there and wanted to say hi.",
+    "correct": "Opener"
+  },
+  {
+    "id": 107,
+    "text": "I'm going to be honest, I'm a bit nervous, but I had to come say hi.",
+    "correct": "Opener"
+  },
+  {
+    "id": 108,
+    "text": "You look super fun.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 109,
+    "text": "Interesting necklace. Where did you get it? My sister has been looking for one like that.",
+    "correct": "Opener"
+  },
+  {
+    "id": 110,
+    "text": "Is that drink any good? I was thinking about ordering it next time.",
+    "correct": "Opener"
+  },
+  {
+    "id": 111,
+    "text": "I know we just made eye contact, but I'm mentally naming our future dog.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 112,
+    "text": "You're hot.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 113,
+    "text": "I was going to mind my business but then you showed up.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 114,
+    "text": "Do I know you? You look like someone I should know.",
+    "correct": "Opener"
+  },
+  {
+    "id": 115,
+    "text": "Aside from being attractive, what do you do for a living?",
+    "correct": "Opener"
+  },
+  {
+    "id": 116,
+    "text": "Hey, you're pretty and I'm cute. Together we'd be pretty cute.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 117,
+    "text": "You seem... interesting.",
+    "correct": "Opener"
+  },
+  {
+    "id": 118,
+    "text": "You have the funniest expressions.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 119,
+    "text": "You're trouble.",
+    "correct": "Neg"
+  },
+  {
+    "id": 120,
+    "text": "You're actually kinda cute.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 121,
+    "text": "You're actually pretty okay... I didn't expect to like you at first.",
+    "correct": "Neg"
+  },
+  {
+    "id": 122,
+    "text": "Stop looking at me like that.",
+    "correct": "Neg"
+  },
+  {
+    "id": 123,
+    "text": "I'm going to pretend you didn't just say that because I'm enjoying liking you.",
+    "correct": "Neg"
+  },
+  {
+    "id": 124,
+    "text": "You won't get into my pants if you keep doing that.",
+    "correct": "Neg"
+  },
+  {
+    "id": 125,
+    "text": "Damn... please stop being so cute.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 126,
+    "text": "I'm not going to sleep with you tonight.",
+    "correct": "Neg"
+  },
+  {
+    "id": 127,
+    "text": "You would make a great girlfriend... if you weren't so pushy.",
+    "correct": "Neg"
+  },
+  {
+    "id": 128,
+    "text": "I kind of want to have breakfast with you.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 129,
+    "text": "I kind of want to make you my favorite person in this city.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 130,
+    "text": "I have to ask you something important: do you sleep on the left or the right side of the bed?",
+    "correct": "Opener"
+  },
+  {
+    "id": 131,
+    "text": "I feel like there's some weird energy between us.",
+    "correct": "Opener"
+  },
+  {
+    "id": 132,
+    "text": "What are we supposed to do with this energy between us?",
+    "correct": "Opener"
+  },
+  {
+    "id": 133,
+    "text": "I have to go back to my friends, but this conversation is getting interesting.",
+    "correct": "Opener"
+  },
+  {
+    "id": 134,
+    "text": "It's a shame there are so many people here, it's hard to focus on this conversation.",
+    "correct": "Opener"
+  },
+  {
+    "id": 135,
+    "text": "There's something attractive about you but I'm not sure what it is.",
+    "correct": "Compliment"
+  },
+  {
+    "id": 136,
+    "text": "Are you a Christmas Tree? Cause i want to put my balls on you",
+    "correct": "Neg"
+  },
+  {
+    "id": 137,
+    "text": "As long as I have a face, you’ll have a place to sit.",
+    "correct": "Neg"
+  },
+  {
+    "id": 138,
+    "text": "Am I going to eat that (Point at her down below lady parts)",
+    "correct": "Neg"
+  },
+  {
+    "id": 139,
+    "text": "Lets play Titantic. When I say iceberg, you go down.",
+    "correct": "Neg"
+  },
+  {
+    "id": 140,
+    "text": "I got a knife and a penis, one of them is going in you tonight.",
+    "correct": "Neg"
+  },
+  {
+    "id": 141,
+    "text": "Ich habe ein Geschenk für dich, in meiner Hose!",
+    "correct": "Neg"
+  },
+  {
+    "id": 142,
+    "text": "You know what I like in a girl? My dick.",
+    "correct": "Neg"
+  },
+  {
+    "id": 143,
+    "text": "I’ll give you a nickel if you tickle my pickle.",
+    "correct": "Neg"
+  }
+]
