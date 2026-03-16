@@ -1,17 +1,17 @@
 /**
- * Service worker for pua PWA — offline caching
+ * Service worker for quiz PWA — offline caching
  * Works when deployed to root or subfolder (FTP-friendly).
  * When bumping version in index.html, update CACHE_NAME here too.
  */
-const CACHE_NAME = 'pua-v2.0.0';
+const CACHE_NAME = 'quiz-v2.0.2';
 const BASE = self.location.pathname.replace(/sw\.js$/, '') || '/';
 const ASSETS = [
   BASE || '/',
   BASE + 'index.html',
-  BASE + 'styles.css?v=2.0.0',
-  BASE + 'app.js?v=2.0.0',
+  BASE + 'styles.css?v=2.0.2',
+  BASE + 'app.js?v=2.0.2',
   BASE + 'manifest.json',
-  BASE + 'movie_quizz.json',
+  BASE + 'movie_quizz_500_updated.json',
   BASE + 'icons/icon.svg',
 ];
 
@@ -49,8 +49,8 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Network-first for movie_quizz.json so we get fresh data when online
-  if (url.pathname.endsWith('/movie_quizz.json')) {
+  // Network-first for movie_quizz_500_updated.json so we get fresh data when online
+  if (url.pathname.endsWith('/movie_quizz_500_updated.json')) {
     e.respondWith(
       fetch(request)
         .then((res) => {

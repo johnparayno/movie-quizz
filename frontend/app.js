@@ -1,12 +1,12 @@
 /**
- * pua - Frontend-only PWA
- * Quiz app: categorize pickup lines. Content from movie_quizz.json.
+ * quiz - Frontend-only PWA
+ * Quiz app: movie quote quiz. Content from movie_quizz_500_updated.json.
  * Votes stored locally (IndexedDB); no backend.
  */
 
-const SESSION_COOKIE_NAME = 'pua_session';
+const SESSION_COOKIE_NAME = 'quiz_session';
 const SESSION_COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year
-const OFFLINE_DB_NAME = 'pua_offline';
+const OFFLINE_DB_NAME = 'quiz_offline';
 const OFFLINE_STORE = 'votes';
 
 /**
@@ -24,12 +24,18 @@ const ANSWER_OPTIONS = ['Neg', 'Opener', 'Compliment'];
 
 /**
  * Normalize content item to app shape.
+ * Supports both movie quiz format (quote, options, answer) and legacy format (text, correct).
  */
 function normalizeItem(item) {
+  const isMovieFormat = item.quote != null && Array.isArray(item.options) && item.answer != null;
+  const text = isMovieFormat ? item.quote : item.text;
+  const correct = isMovieFormat ? item.answer : (item.correct || 'Neg');
+  const options = isMovieFormat ? shuffle([...item.options]) : getAnswerOptions(correct);
   return {
     id: item.id,
-    text: item.text,
-    correct: item.correct || 'Neg',
+    text,
+    correct,
+    options,
     content_type: item.content_type || 'neg',
     created_at: item.created_at || '',
   };
@@ -57,10 +63,10 @@ function getAnswerOptions(correct) {
 }
 
 /**
- * Load content from movie_quizz.json.
+ * Load content from movie_quizz_500_updated.json.
  */
 async function loadContent() {
-  const res = await fetch('movie_quizz.json', { cache: 'no-store' });
+  const res = await fetch('movie_quizz_500_updated.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('Content unavailable');
   const items = await res.json();
   return Array.isArray(items) ? items : [];
@@ -254,10 +260,10 @@ document.addEventListener('DOMContentLoaded', () => {
     main.classList.remove('bg-variant-0', 'bg-variant-1', 'bg-variant-2', 'bg-variant-3', 'bg-variant-4');
     main.classList.add(`bg-variant-${variant}`);
     setThemeColor(variant);
-    const options = getAnswerOptions(item.correct);
-    if (answer1) { answer1.textContent = options[0]; answer1.disabled = false; }
-    if (answer2) { answer2.textContent = options[1]; answer2.disabled = false; }
-    if (answer3) { answer3.textContent = options[2]; answer3.disabled = false; }
+    const options = item.options || getAnswerOptions(item.correct);
+    if (answer1) { answer1.textContent = options[0]; answer1.disabled = false; answer1.classList.remove('answer-correct', 'answer-wrong', 'answer-correct-reveal'); }
+    if (answer2) { answer2.textContent = options[1]; answer2.disabled = false; answer2.classList.remove('answer-correct', 'answer-wrong', 'answer-correct-reveal'); }
+    if (answer3) { answer3.textContent = options[2]; answer3.disabled = false; answer3.classList.remove('answer-correct', 'answer-wrong', 'answer-correct-reveal'); }
     showState('content');
   }
 
@@ -276,6 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   }
 
+  const FEEDBACK_DURATION_MS = 5000;
+
   function showAnswerFeedback(correct) {
     if (!voteFeedbackOverlay) return;
     voteFeedbackOverlay.classList.remove('hidden');
@@ -285,13 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ctx) ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
     if (correct) {
       runConfetti(confettiCanvas, 1200);
-      setTimeout(() => voteFeedbackOverlay?.classList.add('hidden'), 1200);
+      setTimeout(() => voteFeedbackOverlay?.classList.add('hidden'), FEEDBACK_DURATION_MS);
     } else {
       wrongFeedback?.classList.remove('hidden');
       setTimeout(() => {
         voteFeedbackOverlay?.classList.add('hidden');
         wrongFeedback?.classList.add('hidden');
-      }, 800);
+      }, FEEDBACK_DURATION_MS);
     }
   }
 
@@ -309,6 +317,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const item = pickRandom(allContent, lastShownId);
       if (item) {
+        if (wasCorrect !== null) {
+          await new Promise((r) => setTimeout(r, FEEDBACK_DURATION_MS));
+        }
         showTransition(() => setContent(item));
       } else {
         showState('empty');
@@ -319,12 +330,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function handleAnswer(selectedAnswer) {
+  function handleAnswer(selectedAnswer, clickedButton) {
     if (!currentItem || isTransitioning) return;
     const correct = selectedAnswer === currentItem.correct;
     if (answer1) answer1.disabled = true;
     if (answer2) answer2.disabled = true;
     if (answer3) answer3.disabled = true;
+    if (clickedButton) {
+      clickedButton.classList.add(correct ? 'answer-correct' : 'answer-wrong');
+      if (!correct) {
+        const correctBtn = [answer1, answer2, answer3].find((b) => b && b.textContent === currentItem.correct);
+        if (correctBtn) correctBtn.classList.add('answer-correct-reveal');
+      }
+      setTimeout(() => {
+        clickedButton.classList.remove('answer-correct', 'answer-wrong');
+        [answer1, answer2, answer3].forEach((b) => b?.classList.remove('answer-correct-reveal'));
+      }, FEEDBACK_DURATION_MS);
+    }
     if (correct) {
       score += 1;
       updateScoreDisplay();
@@ -337,9 +359,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadNext(correct);
   }
 
-  answer1?.addEventListener('click', () => handleAnswer(answer1.textContent));
-  answer2?.addEventListener('click', () => handleAnswer(answer2.textContent));
-  answer3?.addEventListener('click', () => handleAnswer(answer3.textContent));
+  answer1?.addEventListener('click', () => handleAnswer(answer1.textContent, answer1));
+  answer2?.addEventListener('click', () => handleAnswer(answer2.textContent, answer2));
+  answer3?.addEventListener('click', () => handleAnswer(answer3.textContent, answer3));
   retryFetchBtn?.addEventListener('click', () => loadNext());
 
   // Info overlay
@@ -370,13 +392,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
     if (e.key === '1' && answer1 && !answer1.disabled) {
       e.preventDefault();
-      handleAnswer(answer1.textContent);
+      handleAnswer(answer1.textContent, answer1);
     } else if (e.key === '2' && answer2 && !answer2.disabled) {
       e.preventDefault();
-      handleAnswer(answer2.textContent);
+      handleAnswer(answer2.textContent, answer2);
     } else if (e.key === '3' && answer3 && !answer3.disabled) {
       e.preventDefault();
-      handleAnswer(answer3.textContent);
+      handleAnswer(answer3.textContent, answer3);
     }
   });
 
