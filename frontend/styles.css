@@ -234,7 +234,8 @@ main.transition-in .content-text {
 .next-skip-btn {
   position: absolute;
   top: 50%;
-  right: max(1rem, env(safe-area-inset-right));
+  left: calc(50% + min(21rem, 46vw) + 0.75rem);
+  right: auto;
   transform: translateY(-50%);
   z-index: 6;
   width: 2.5rem;
@@ -263,6 +264,13 @@ main.transition-in .content-text {
 
 .next-skip-btn:active {
   transform: translateY(-50%) scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .next-skip-btn {
+    left: auto;
+    right: max(1rem, env(safe-area-inset-right));
+  }
 }
 
 #confetti-canvas {
