@@ -3,13 +3,13 @@
  * Works when deployed to root or subfolder (FTP-friendly).
  * When bumping version in index.html, update CACHE_NAME here too.
  */
-const CACHE_NAME = 'quiz-v2.0.2';
+const CACHE_NAME = 'quiz-v2.0.3';
 const BASE = self.location.pathname.replace(/sw\.js$/, '') || '/';
 const ASSETS = [
   BASE || '/',
   BASE + 'index.html',
-  BASE + 'styles.css?v=2.0.2',
-  BASE + 'app.js?v=2.0.2',
+  BASE + 'styles.css?v=2.0.3',
+  BASE + 'app.js?v=2.0.3',
   BASE + 'manifest.json',
   BASE + 'movie_quizz_500_updated.json',
   BASE + 'icons/icon.svg',
