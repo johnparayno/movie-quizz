@@ -59,6 +59,10 @@ main {
     padding-bottom: 12rem; /* space for fixed answer buttons */
     padding-top: env(safe-area-inset-top); /* match content to safe area under notch */
   }
+  /* Score above fixed buttons so it is never overlayed */
+  .score-container {
+    bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 11rem);
+  }
 }
 
 /* Quote-style content block */
@@ -234,8 +238,8 @@ main.transition-in .content-text {
 .next-skip-btn {
   position: absolute;
   top: 50%;
-  left: calc(50% + min(21rem, 46vw) + 0.75rem);
-  right: auto;
+  left: auto;
+  right: max(1rem, env(safe-area-inset-right));
   transform: translateY(-50%);
   z-index: 6;
   width: 2.5rem;
@@ -266,18 +270,13 @@ main.transition-in .content-text {
   transform: translateY(-50%) scale(0.95);
 }
 
-@media (max-width: 600px) {
-  .next-skip-btn {
-    left: auto;
-    right: max(1rem, env(safe-area-inset-right));
-  }
-}
 
 #confetti-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none; /* don't block clicks on next-skip button */
 }
 
 .booh-feedback {
@@ -289,6 +288,7 @@ main.transition-in .content-text {
   justify-content: center;
   gap: 0.5rem;
   animation: boohShake 0.6s ease-out;
+  pointer-events: none; /* don't block clicks on next-skip button */
 }
 
 .booh-emoji {
