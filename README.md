@@ -1,6 +1,6 @@
-# pua
+# quiz
 
-A frontend-only PWA that displays one-liners. Swipe or tap thumbs up/down to vote and see the next item. Content from `content.json`; votes stored locally in the browser.
+A frontend-only PWA movie quote quiz. Read the quote and tap the correct answer. Content from `content.json`; votes stored locally in the browser.
 
 ## Quick start
 
@@ -15,14 +15,14 @@ Open http://localhost:3000
 
 1. Upload everything inside the `frontend/` folder to your web root (e.g. `public_html/`).
 2. Serve over HTTPS for full PWA support.
-3. Works in subfolders too — upload to `public_html/pua/` if needed.
+3. Works in subfolders too — upload to `public_html/quiz/` if needed.
 
 **Files to upload:**
 - index.html
 - app.js
 - styles.css
 - manifest.json
-- content.json
+- movie_quizz_500_updated.json
 - sw.js
 - icons/icon.svg
 

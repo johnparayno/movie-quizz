@@ -1,7 +1,7 @@
 {
-  "name": "pua",
-  "short_name": "pua",
-  "description": "One-liners — swipe and vote",
+  "name": "quiz",
+  "short_name": "quiz",
+  "description": "Movie quote quiz — guess the answer",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#5a67d8",
